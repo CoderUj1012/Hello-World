@@ -112,9 +112,27 @@ content = dir(math)
 print(content)
 
 print("----------------------File I/O----------------------------")
-f = open("foo.txt","w")
-print("Name: ",f.name)
-print("Closed or not: ",f.closed)
-n = int(input("Enter the number: "))
+
+import os
+
+f = open("foo1.txt",'r+')
+print(f.name)
+print(f.mode)
+f.write("\nWinner winner Chicken dinner")
+print(f.read(150))
+print(f.tell())
+f.seek(100,0)
+print(f.tell())
+f.close()
+print(f.closed)
+os.rename("foo1.txt","foo1.txt")
+d = open("del.txt","w+")
+d.write("New File to be Deleted")
+os.remove("del.txt")
+os.mkdir("test4")
+os.chdir("venv")
+print(os.getcwd())
+os.chdir("/Users/utkmac/PycharmProjects/MyPython")
+os.rmdir("test1")
 
 
