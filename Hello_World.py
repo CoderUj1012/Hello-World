@@ -135,4 +135,31 @@ print(os.getcwd())
 os.chdir("/Users/utkmac/PycharmProjects/MyPython")
 os.rmdir("test1")
 
+print("-----------------------Exception----------------------------")
 
+try:
+    n = int(input('Enter the number:'))
+    f = open("foo2.txt",'w')
+    f.write('This is my file')
+    d = 100/n
+except IOError as Argument:
+    print("Can't write into the file, YOU DON'T HAVE PERMISSION")
+    print(Argument)
+except (ArithmeticError, OverflowError):
+    print("Incorrect Value of n, ZERO can't be used")
+else:
+    print('Contents successfully written to the file')
+    print(d)
+finally:
+    print('Going to CLOSE this file')
+
+try:
+    f = open('foo3.txt','r')
+    f.write('SOMETHING')
+except:
+    print('Something went wrong')
+else:
+    print('Everything went fine')
+
+
+print('------------------------End of Python Basics-----------------')
